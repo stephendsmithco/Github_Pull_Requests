@@ -3,12 +3,12 @@ const app = express()
 const swaggerUi = require('swagger-ui-express')
 const swaggerDoc = require('./swagger.json')
 const port = process.env.PORT || 3000
-const helloWorldController = require('./controllers/hello_world_controller')
+const ghPullRequestsController = require('./controllers/gh_pull_requests_controller')
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc))
 
-app.get('/helloWorld', (req, res) => {
-  helloWorldController.getHelloWorld(req, res)
+app.get('/gh_pull_requests', (req, res) => {
+  ghPullRequestsController.getGHPullRequests(req, res)
 })
 
 app.listen(port, () => {

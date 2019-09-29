@@ -11,7 +11,7 @@
     "application/json"
   ],
   "paths": {
-    "/helloWorld": {
+    "/gh_pull_requests": {
       "get": {
         "description": "Hello World!",
         "responses": {
