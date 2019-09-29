@@ -10,6 +10,7 @@ in another terminal, navigate to client directory and run `npm start`
 Should be able to navigate to http://localhost:3000 and use app as normal.
 WARNING: github has rate limiting that you may run into while testing this
 
+test!
 # Tests
 npm test
 Note: needs error tests still, only contains happy path unit tests
