@@ -8,7 +8,7 @@
     "start": "node ./src/server.js",
     "start:dev": "nodemon ./src/server.js",
     "precommit": "lint-staged",
-    "lint": "eslint \"**/*.js\" --fix"
+    "lint": "eslint \"src/**/*.js\" --fix"
   },
   "repository": {
     "type": "git",
@@ -40,9 +40,12 @@
     "chai": "^4.2.0",
     "eslint": "^6.3.0",
     "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-flowtype": "^4.3.0",
     "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react-hooks": "^2.1.1",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^3.0.3",
     "lint-staged": "^9.2.1",
