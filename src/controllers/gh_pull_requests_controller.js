@@ -1,9 +1,11 @@
 const helper = require('../helpers/gh_request_helper')
-const { getUsernameRepoFromUrl, getGHResponseFromUrl } = helper
 
 const GITHUB_BASE_URL = 'https://api.github.com'
 
 async function getGHPullRequests (req, res) {
+  // This is here so sinon can stub these for testing
+  const { getUsernameRepoFromUrl, getGHResponseFromUrl } = helper
+
   // Parse information from the gh_repository_url to get username and repo name
   let username
   let repo

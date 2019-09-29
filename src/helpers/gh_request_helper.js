@@ -26,7 +26,7 @@ async function getGHResponseFromUrl (url, userAgent) {
           'User-Agent': userAgent
         }
       })
-    logger.log('info', `Got response ${response} from url ${url}`)
+    logger.log('verbose', `Got response ${response} from url ${url}`)
     return JSON.parse(response)
   } catch (err) {
     logger.log('error', `Unable to get response from url ${url}, Error: ${err}`)
