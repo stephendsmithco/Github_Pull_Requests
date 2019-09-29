@@ -14,8 +14,19 @@ async function getGHPullRequests (req, res) {
         'User-Agent': 'stephendsmithco'
       }
     })
+  const numPullRequests = response.length()
+  const results = response.reduce((pullRequestInfos, pullRequest) => {
+    pullRequestInfos.push({
+      html_url: pullRequest.html_url,
+      title: pullRequest.title
+    })
+    return pullRequestInfos
+  }, [])
   console.log('Response: ', response)
-  res.send('Hello World')
+  res.send({
+    count: numPullRequests,
+    results: results
+  })
 }
 
 module.exports = {
