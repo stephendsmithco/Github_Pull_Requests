@@ -3,7 +3,7 @@ const rpNative = require('request-promise-native')
 
 const GITHUB_BASE_URL = 'https://api.github.com'
 
-async function getGHResponseFromUrl(url) {
+async function getGHResponseFromUrl (url) {
   return JSON.parse(await rpNative.get(url,
     {
       headers: {
@@ -18,7 +18,7 @@ async function getGHPullRequests (req, res) {
   const username = urlSplit[3]
   const repo = urlSplit[4]
   const response = await getGHResponseFromUrl(`${GITHUB_BASE_URL}/repos/${username}/${repo}/pulls`)
-  
+
   const numPullRequests = response.length
   const detailsPromisesArray = []
 
@@ -27,7 +27,7 @@ async function getGHPullRequests (req, res) {
       html_url: pullRequest.html_url,
       title: pullRequest.title
     })
-    detailsPromisesArray.push(getGHResponseFromUrl(pullRequest.review_comments_url))
+    detailsPromisesArray.push(getGHResponseFromUrl(pullRequest.comments_url))
     detailsPromisesArray.push(getGHResponseFromUrl(pullRequest.commits_url))
     return pullRequestInfos
   }, [])
