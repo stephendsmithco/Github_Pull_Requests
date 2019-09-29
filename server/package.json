@@ -1,23 +1,23 @@
 {
-  "name": "nodejs_express_template",
+  "name": "Github_Pull_Requests",
   "version": "1.0.0",
-  "description": "Express Server Template for NodeJS",
+  "description": "Contains an app that allows viewing of information related to open pull requests to a supplied repository URL",
   "main": "./src/server.js",
   "scripts": {
     "test": "mocha test/**/*.js",
     "start": "node ./src/server.js",
-    "start:dev": "./node_modules/nodemon/bin/nodemon.js ./src/server.js",
+    "start:dev": "nodemon ./src/server.js",
     "precommit": "lint-staged",
-    "lint": "eslint \"**/*.js\" --fix"
+    "lint": "eslint \"src/**/*.js\" --fix"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stephendsmithco/NodeJS_Express_Template.git"
+    "url": "git+https://github.com/stephendsmithco/Github_Pull_Requests.git"
   },
   "author": "Stephen Smith",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/stephendsmithco/NodeJS_Express_Template/issues"
+    "url": "https://github.com/stephendsmithco/Github_Pull_Requests/issues"
   },
   "husky": {
     "hooks": {
@@ -31,21 +31,28 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "swagger-ui-express": "^4.1.0"
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
+    "swagger-ui-express": "^4.1.0",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "eslint": "^6.3.0",
     "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-flowtype": "^4.3.0",
     "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react-hooks": "^2.1.1",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^3.0.3",
     "lint-staged": "^9.2.1",
     "mocha": "^6.2.0",
     "nodemon": "^1.19.2",
+    "sinon": "^7.5.0",
     "standard": "^14.1.0"
   },
-  "homepage": "https://github.com/stephendsmithco/NodeJS_Express_Template#README"
+  "homepage": "https://github.com/stephendsmithco/Github_Pull_Requests#README"
 }

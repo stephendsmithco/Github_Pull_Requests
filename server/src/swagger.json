@@ -1,0 +1,80 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Github_Pull_Requests",
+    "version": "1.0.0"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/gh_pull_requests": {
+      "get": {
+        "description": "Gets information about a git hub repository's pull requests",
+        "parameters": [{
+          "in": "query",
+          "name": "gh_repository_url",
+          "type": "string",
+          "required": true,
+          "description": "The repository url to get open pull requests from"
+        }],
+        "responses": {
+          "200": {
+            "description": "success response",
+            "schema": {
+              "$ref": "#/definitions/SuccessObject"
+            }
+          },
+          "400": {
+            "description": "bad request response",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "description": "internal server error response",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "SuccessObject": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PRObject"
+          }
+        }
+      }
+    },
+    "PRObject": {
+      "type": "object",
+      "properties": {
+        "html_url": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "comment_count": {
+          "type": "integer"
+        },
+        "commit_count": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
