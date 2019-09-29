@@ -36,6 +36,7 @@ class GitHubForm extends Component {
               details.push({
                 html_url: pr.html_url,
                 title: pr.title,
+                user: pr.user,
                 comment_count: pr.comment_count,
                 commit_count: pr.commit_count
               })
@@ -62,6 +63,7 @@ class GitHubForm extends Component {
               <tr>
                 <th>PR Title</th>
                 <th>PR Url</th>
+                <th>User</th>
                 <th>Commit Count</th>
                 <th>Comment Count</th>
               </tr>
@@ -70,6 +72,7 @@ class GitHubForm extends Component {
                   <React.Fragment>
                     <th>{pr.title}</th>
                     <th>{pr.html_url}</th>
+                    <th>{pr.user}</th>
                     <th>{pr.commit_count}</th>
                     <th>{pr.comment_count}</th>
                   </React.Fragment>

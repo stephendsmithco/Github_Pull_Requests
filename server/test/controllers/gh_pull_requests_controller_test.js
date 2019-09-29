@@ -9,7 +9,7 @@ describe('gh_pull_requests_controller', () => {
     let req
     let requestHelperUNStub
     let requestHelperResponseStub
-    const firstResponse = [{ html_url: 'the html url', title: 'cool title', comments_url: 'comment', commits_url: 'commits' }]
+    const firstResponse = [{ html_url: 'the html url', title: 'cool title', comments_url: 'comment', commits_url: 'commits', user: { login: 'user' } }]
     const secondResponse = [1, 2, 3]
     const thirdResponse = [1, 2]
 
@@ -42,6 +42,7 @@ describe('gh_pull_requests_controller', () => {
         results: [{
           html_url: 'the html url',
           title: 'cool title',
+          user: 'user',
           comment_count: 3,
           commit_count: 2
         }]

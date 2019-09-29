@@ -38,7 +38,8 @@ async function getGHPullRequests (req, res) {
   const results = response.reduce((pullRequestInfos, pullRequest) => {
     pullRequestInfos.push({
       html_url: pullRequest.html_url,
-      title: pullRequest.title
+      title: pullRequest.title,
+      user: pullRequest.user.login
     })
     detailsPromisesArray.push(getGHResponseFromUrl(pullRequest.comments_url, username))
     detailsPromisesArray.push(getGHResponseFromUrl(pullRequest.commits_url, username))
