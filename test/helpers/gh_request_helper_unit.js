@@ -8,7 +8,7 @@ describe('gh_requst_helper_unit', () => {
     it('should parse the username and repo out of a valid github url', () => {
       const url = 'https://github.com/stephendsmithco/Github_Pull_Requests'
       const results = ghRequestHelper.getUsernameRepoFromUrl(url)
-      expect(results).to.eql({username: 'stephendsmithco', repo: 'Github_Pull_Requests'})
+      expect(results).to.eql({ username: 'stephendsmithco', repo: 'Github_Pull_Requests' })
     })
 
     it('should throw an error if the url is not valid', () => {

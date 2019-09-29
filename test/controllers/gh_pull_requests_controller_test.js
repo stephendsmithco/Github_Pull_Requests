@@ -4,14 +4,14 @@ const ghRequestHelper = require('../../src/helpers/gh_request_helper')
 
 describe('gh_pull_requests_controller', () => {
   const ghPullRequestController = require('../../src/controllers/gh_pull_requests_controller')
-  
+
   describe('getGHPullRequests', () => {
     let req
     let requestHelperUNStub
     let requestHelperResponseStub
-    let firstResponse = [{'html_url': 'the html url', 'title': 'cool title', 'comments_url': 'comment', 'commits_url': 'commits'}]
-    let secondResponse = [1, 2, 3]
-    let thirdResponse = [1, 2]
+    const firstResponse = [{ html_url: 'the html url', title: 'cool title', comments_url: 'comment', commits_url: 'commits' }]
+    const secondResponse = [1, 2, 3]
+    const thirdResponse = [1, 2]
 
     beforeEach(() => {
       req = {
